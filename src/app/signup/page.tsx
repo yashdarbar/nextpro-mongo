@@ -7,7 +7,7 @@ import axios from "axios";
 
 const page = () => {
     const router = useRouter();
-    const [user, setUser] = useState({
+    const [user, setUser] = React.useState({
         email: "",
         username: "",
         password: "",
@@ -35,8 +35,9 @@ const page = () => {
             const response = await axios.post("/api/users/signup", user);
             console.log("Signup successfully", response.data);
             router.push("/login");
-        } catch (error: any) {
+        } catch (error:any) {
             console.log("SignUp Failed!", error.message);
+            console.log(error);
         } finally {
             setLoading(false);
         }

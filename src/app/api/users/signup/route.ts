@@ -5,10 +5,11 @@ import User from "@/models/userModels.js";
 
 connect()
 
-export async function POST(request: NextRequest) {
+export async function POST(req:any) {
     try {
-        const reqBody = await request.json();
+        const reqBody = await req.json();
         const { username, email, password } = reqBody;
+        console.log(reqBody);
 
         //check if user already exists PS:it should be in await or else it'll give u a querry
         const user = await User.findOne({email})
