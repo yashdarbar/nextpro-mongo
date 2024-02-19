@@ -70,6 +70,7 @@ const page = () => {
             <input
                 type="password"
                 name="password"
+                id="password"
                 placeholder="password"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
