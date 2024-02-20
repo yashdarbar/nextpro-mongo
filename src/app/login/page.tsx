@@ -39,7 +39,7 @@ const page = () => {
 
     return (
         <div className="flex flex-col text-white justify-center items-center min-h-screen ">
-            <h1 className="font-semibold">
+            <h1 className="font-semibold text-2xl mb-3">
                 {loading ? "processing" : "Login!"}
             </h1>
             <hr />
@@ -49,21 +49,31 @@ const page = () => {
                 name="email"
                 id="email"
                 placeholder="email"
+                className="rounded-md px-2 py-1 text-black"
                 value={user.email}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
-            <label htmlFor="password">password</label>
+            <label htmlFor="password" className="mt-2">
+                password
+            </label>
             <input
                 type="password"
                 name="password"
                 placeholder="password"
+                className="rounded-md px-2 py-1 text-black"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
-            <button type="submit" onClick={onLogin}>
+            <button
+                type="submit"
+                onClick={onLogin}
+                className="mt-4  font-semibold px-2 py-1 border-2  border-white rounded-lg"
+            >
                 {buttonDisabled ? "No loginup" : "Login "}
             </button>
-            <Link href="/signup">Visit SignUp page</Link>
+            <Link href="/signup" className="text-sm mt-1 underline decoration ">
+                Visit SignUp page
+            </Link>
         </div>
     );
 };
