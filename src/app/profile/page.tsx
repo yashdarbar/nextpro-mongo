@@ -36,7 +36,7 @@ export default function Profile() {
             <h2>
                 {data === "nothing" ?
                     "nothing"
-                 :
+                :
                     <Link href={`/profile/${data}`}>{data}</Link>
                 }
             </h2>
